@@ -41,8 +41,15 @@
       sampleVolume: 0x05,
       loadPage: 0x0A,
       VUMeterL: 0x12, VUMeterR: 0x13,
+
       fx1Enable: 0x24, fx2Enable: 0x25,
       samplerFx1Enable: 0x26,samplerFx2Enable: 0x27,
+      fx1Headphone: 0x28, fx2Headphone: 0x29,
+
+      fxParams: [
+      	[{enabled: 0x30, meta: 0x31}, {enabled: 0x32, meta: 0x33}, {enabled: 0x34, meta: 0x35}],
+	      [{enabled: 0x40, meta: 0x41}, {enabled: 0x42, meta: 0x43}, {enabled: 0x44, meta: 0x45}],
+      ],
     }
 
     for(knob in this.ctrls.knobs)
@@ -51,6 +58,41 @@
         midi: [0xB0 + this.midiChannel, this.ctrls.knobs[knob]],
         key: knob,
         group: this.group,
+      });
+    }
+
+    for(fx in this.ctrls.fxParams)
+    {
+	    for(i in this.ctrls.fxParams[fx])
+	    {
+		    var group = '[EffectRack1_EffectUnit'+(+fx+1)+'_Effect' + (+i+1) + ']';
+		    var name = 'fx'+(+fx+1)+'Effect'+(+i+1);
+	      this[name+'Meta'] = new touchMixxx.Pot({
+	        midi: [0xB0 + this.midiChannel, this.ctrls.fxParams[fx][i].meta],
+	        key: 'meta',
+	        group: group,
+	      });
+	      this[name+'Enabled'] = new components.Button({
+	        midi: [0xB0 + this.midiChannel, this.ctrls.fxParams[fx][i].enabled],
+	        key: 'enabled',
+	        type: components.Button.prototype.types.toggle,
+	        group: group,
+	      });
+	    }
+    }
+
+    for(i in this.ctrls.fx2Params)
+    {
+      this['fx2Effect'+(i)+'Meta'] = new touchMixxx.Pot({
+        midi: [0xB0 + this.midiChannel, this.ctrls.fx2Params[i].meta],
+        key: 'meta',
+        group: 'EffectRack1_EffectUnit1_Effect1',
+      });
+      this['fx2Effect'+(i)+'Enable'] = new components.Button({
+        midi: [0xB0 + this.midiChannel, this.ctrls.fx2Params[i].enable],
+        key: 'enable',
+        type: components.Button.prototype.types.toggle,
+        group: 'EffectRack1_EffectUnit1_Effect1',
       });
     }
 
@@ -81,6 +123,13 @@
       group: '[EffectRack1_EffectUnit1]',
     });
 
+    this.fx1Headphone = new components.Button({
+      midi: [0xB0 + this.midiChannel, this.ctrls.fx1Headphone],
+      group: '[EffectRack1_EffectUnit1]',
+      type: components.Button.prototype.types.toggle,
+      key: 'group_[Headphone]_enable',
+    });
+
     this.fx2Enable = new components.Button({
       midi: [0xB0 + this.midiChannel, this.ctrls.fx2Enable],
       group: '[EffectRack1_EffectUnit2]',
@@ -93,6 +142,14 @@
       key: 'mix',
       group: '[EffectRack1_EffectUnit2]',
     });
+
+    this.fx2Headphone = new components.Button({
+      midi: [0xB0 + this.midiChannel, this.ctrls.fx2Headphone],
+      group: '[EffectRack1_EffectUnit2]',
+      type: components.Button.prototype.types.toggle,
+      key: 'group_[Headphone]_enable',
+    });
+
 
   /* adjusts the volume for all samplers*/
     this.sampleVolume = new touchMixxx.Pot({

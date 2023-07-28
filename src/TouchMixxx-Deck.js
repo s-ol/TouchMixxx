@@ -38,7 +38,8 @@
 
         simpleKnobs: {volume: 0x04, pregain: 0x05,},
         simpleButtons: {rate_temp_down: 0x0C, rate_temp_up: 0x0D, rate_perm_down_small: 0x0E, rate_perm_up_small: 0x0F,},
-        simpleToggles: {pfl: 0x03, quantize:0x28 ,keylock:0x29, slip_enabled: 0x2A,},
+        simpleToggles: {pfl: 0x03, quantize:0x28 ,keylock:0x29, slip_enabled: 0x2A,
+                        filterLowKill: 0x36, filterMidKill: 0x37, filterHighKill: 0x38},
         eq:{parameter1: 0x06,parameter2: 0x07,parameter3: 0x08,},
         qfx:{super1:0x09},browse: 0x10, load: 0x11, VUMeterL: 0x12,VUMeterR: 0x13,
         padModeOffset:0x14/* 0x1B */, padOffset:0x1C /*0x23 */,

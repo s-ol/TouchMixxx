@@ -143,6 +143,24 @@
           </control>
           <control>
               <group>[Master]</group>
+              <key>TouchMixxx.master.fx1Headphone.input</key>
+              <status>0xB9</status>
+              <midino>0x28</midino>
+              <options>
+                  <Script-Binding/>
+              </options>
+          </control>
+          <control>
+              <group>[Master]</group>
+              <key>TouchMixxx.master.fx2Headphone.input</key>
+              <status>0xB9</status>
+              <midino>0x29</midino>
+              <options>
+                  <Script-Binding/>
+              </options>
+          </control>
+          <control>
+              <group>[Master]</group>
               <key>TouchMixxx.loadPage</key>
               <status>0xB9</status>
               <midino>0x0A</midino>
@@ -150,6 +168,118 @@
                   <Script-Binding/>
               </options>
           </control>
+
+          <control>
+              <group>[EffectRack1_EffectUnit1_Effect1]</group>
+              <key>TouchMixxx.master.fx1Effect1Enabled.input</key>
+              <status>0xB9</status>
+              <midino>0x30</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit1_Effect1]</group>
+              <key>TouchMixxx.master.fx1Effect1Meta.input</key>
+              <status>0xB9</status>
+              <midino>0x31</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit1_Effect2]</group>
+              <key>TouchMixxx.master.fx1Effect2Enabled.input</key>
+              <status>0xB9</status>
+              <midino>0x32</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit1_Effect2]</group>
+              <key>TouchMixxx.master.fx1Effect2Meta.input</key>
+              <status>0xB9</status>
+              <midino>0x33</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit1_Effect3]</group>
+              <key>TouchMixxx.master.fx1Effect3Enabled.input</key>
+              <status>0xB9</status>
+              <midino>0x34</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit1_Effect3]</group>
+              <key>TouchMixxx.master.fx1Effect3Meta.input</key>
+              <status>0xB9</status>
+              <midino>0x35</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit2_Effect1]</group>
+              <key>TouchMixxx.master.fx2Effect1Enabled.input</key>
+              <status>0xB9</status>
+              <midino>0x40</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit2_Effect1]</group>
+              <key>TouchMixxx.master.fx2Effect1Meta.input</key>
+              <status>0xB9</status>
+              <midino>0x41</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit2_Effect2]</group>
+              <key>TouchMixxx.master.fx2Effect2Enabled.input</key>
+              <status>0xB9</status>
+              <midino>0x42</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit2_Effect2]</group>
+              <key>TouchMixxx.master.fx2Effect2Meta.input</key>
+              <status>0xB9</status>
+              <midino>0x43</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit2_Effect3]</group>
+              <key>TouchMixxx.master.fx2Effect3Enabled.input</key>
+              <status>0xB9</status>
+              <midino>0x44</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+          <control>
+              <group>[EffectRack1_EffectUnit2_Effect3]</group>
+              <key>TouchMixxx.master.fx2Effect3Meta.input</key>
+              <status>0xB9</status>
+              <midino>0x45</midino>
+              <options>
+                  <script-binding/>
+              </options>
+          </control>
+
+
+          
           <control>
               <group>[Channel1]</group>
               <key>TouchMixxx.decks[0].input</key>
@@ -236,6 +366,33 @@
                 <key>TouchMixxx.decks[0].input</key>
                 <status>0xB0</status>
                 <midino>0x09</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>TouchMixxx.decks[0].input</key>
+                <status>0xB0</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>TouchMixxx.decks[0].input</key>
+                <status>0xB0</status>
+                <midino>0x37</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>TouchMixxx.decks[0].input</key>
+                <status>0xB0</status>
+                <midino>0x38</midino>
                 <options>
                     <script-binding/>
                 </options>
@@ -592,6 +749,33 @@
                   <key>TouchMixxx.decks[1].input</key>
                   <status>0xB1</status>
                   <midino>0x09</midino>
+                  <options>
+                      <script-binding/>
+                  </options>
+              </control>
+              <control>
+                  <group>[Channel2]</group>
+                  <key>TouchMixxx.decks[1].input</key>
+                  <status>0xB1</status>
+                  <midino>0x36</midino>
+                  <options>
+                      <script-binding/>
+                  </options>
+              </control>
+              <control>
+                  <group>[Channel2]</group>
+                  <key>TouchMixxx.decks[1].input</key>
+                  <status>0xB1</status>
+                  <midino>0x37</midino>
+                  <options>
+                      <script-binding/>
+                  </options>
+              </control>
+              <control>
+                  <group>[Channel2]</group>
+                  <key>TouchMixxx.decks[1].input</key>
+                  <status>0xB1</status>
+                  <midino>0x38</midino>
                   <options>
                       <script-binding/>
                   </options>
