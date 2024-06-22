@@ -214,8 +214,8 @@
 
   };
 
-
-  _.assign(Deck,touchMixxx.Container);
+  Object.assign(Deck.prototype, components.Deck.prototype);
+  Object.assign(Deck.prototype, touchMixxx.Container.prototype);
 
   Deck.prototype.input = function(channel, control, value, status, group)
   {

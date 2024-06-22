@@ -33,7 +33,7 @@
   var PadBank = function(options)
   {
     touchMixxx.Container.call(this,options);
-    _.assign(this, options);
+    Object.assign(this, options);
 
     this.numberOfPads = 8;
     this.padModes = {
@@ -47,7 +47,7 @@
     this.connectModeButtons();
   }
 
-  _.assign(PadBank, touchMixxx.Container);
+  Object.assign(PadBank.prototype, touchMixxx.Container.prototype);
 
   PadBank.prototype.addPad = function(padNumber,options)
   {

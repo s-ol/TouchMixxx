@@ -40,7 +40,7 @@
       print("Error: VUMeter group undefined");
       return;
     }
-    _.assign(this, options);
+    Object.assign(this, options);
     this.connections = [];
 
     if(this.midiR === undefined)
@@ -49,10 +49,10 @@
         midi.sendShortMsg(this.midiL[0], this.midiL[1], value * 128);
       });
     }else{
-      this.connections[0] = engine.makeConnection(this.group, 'VuMeterL', function(value){
+      this.connections[0] = engine.makeConnection('Main', 'vu_meter_left', function(value){
         midi.sendShortMsg(this.midiL[0], this.midiL[1], value * 128);
       });
-      this.connections[1] = engine.makeConnection(this.group, 'VuMeterR', function(value){
+      this.connections[1] = engine.makeConnection('Main', 'vu_meter_right', function(value){
         midi.sendShortMsg(this.midiR[0], this.midiR[1], value * 128);
       });
     }

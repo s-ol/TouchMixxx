@@ -44,7 +44,7 @@
     components.Encoder.call(this,options);
   };
 
-  _.assign(Jog,components.Encoder);
+  Object.assign(Jog.prototype, components.Encoder.prototype);
 
   Jog.prototype.setMode = function(mode)
   {

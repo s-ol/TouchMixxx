@@ -31,7 +31,6 @@
 
   var Pot = function(options)
   {
-
     this.centerZero = options.centerZero;
     this.updateLock = false;
     this.timer = 0;
@@ -42,12 +41,13 @@
   };
 
   //FIX ME -- THIS SHOULD BE ASSIGN BUT FAILS
-  _.merge(Pot.prototype,components.Pot.prototype);
+  // Object.assign(Pot.prototype, components.Pot.prototype); // new components.Pot();
+  Pot.prototype = new components.Pot();
 
   Pot.prototype.input = function(channel, control, value, status, group)
   {
     this.updateLock = true;
-    components.Pot.prototype.input.call(this,channel, control, value, status, group);
+    components.Pot.prototype.input.call(this, channel, control, value, status, group);
 
     if (this.timer !== 0)
     {
@@ -68,6 +68,7 @@
         value = (value + 1) / 2;
         return value * this.max;
       }else{
+        console.log(components.Pot.prototype);
         return components.Pot.prototype.outValueScale.call(this,value);
       }
   };

@@ -41,7 +41,7 @@ incomming value to intervals and feeding that back to TouchOSC
     touchMixxx.Pot.call(this,options);
   }
 
-  _.merge(SlideSwitch.prototype,touchMixxx.Pot.prototype);
+  Object.assign(SlideSwitch.prototype, touchMixxx.Pot.prototype);
 
   SlideSwitch.prototype.input = function(channel, control, value, status, group)
   {
